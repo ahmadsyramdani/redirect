@@ -30,12 +30,12 @@
         // For this, your app need to have category filter: android.intent.category.BROWSABLE
         android: {
             'host': 'explore/tags/balangan/' + encodeURIComponent(qs['message']), // Host/path/querystring part in a custom scheme URL
-            //'action': 'android.intent.action.VIEW', // Equivalent to ACTION in INTENTs
+            'action': 'com.inagi.drivelive.screen.login.LoginActivity', // Equivalent to ACTION in INTENTs
             // 'category': 'android.intent.category.DEFAULT', // Equivalent to CATEGORY in INTENTs
             // 'component': '', // Equivalent to COMPONENT in INTENTs
             'scheme': 'DriveLive', // Scheme part in a custom scheme URL
-            'package': 'com.drive.live', // Package name in Play store
-            'fallback': 'https://play.google.com/store/apps/details?id=com.drive.live'
+            'package': 'com.live.drive', // Package name in Play store
+            'fallback': 'https://play.google.com/store/apps/details?id=com.live.drive'
         }
 
     });
