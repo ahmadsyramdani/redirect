@@ -18,27 +18,27 @@
         NOTE: In Chrome for Android, if the user writes the url manually, it assumes that he does <b>not</b> wish to be redirected outside of the browser. So you want to be redirected to this link or have clicked a link to this url.
     </div>
     <script>
-    // window.location.replace('DriveLive://');
+    window.location.replace('DriveLive://');
 
     // You have the whole queryString ready for you here in a key->value form.
     // In the edge case where there are multiple values, the value is an array.
-    var qs = AppRedirect.queryString;
-    // Here we initiate the redirect process
-    AppRedirect.redirect({
-//        iosApp: 'twitter://post?message=' + qs['message'],
-//        iosAppStore: 'https://itunes.apple.com/il/app/twitter/id333903271?mt=8&message=' + qs['message'],
-        // For this, your app need to have category filter: android.intent.category.BROWSABLE
-        android: {
-            'host': 'explore/tags/balangan/' + encodeURIComponent(qs['message']), // Host/path/querystring part in a custom scheme URL
-            'action': 'com.inagi.drivelive.screen.login.LoginActivity', // Equivalent to ACTION in INTENTs
-            // 'category': 'android.intent.category.DEFAULT', // Equivalent to CATEGORY in INTENTs
-            // 'component': '', // Equivalent to COMPONENT in INTENTs
-            'scheme': 'DriveLive', // Scheme part in a custom scheme URL
-            'package': 'com.live.drive', // Package name in Play store
-            'fallback': 'https://play.google.com/store/apps/details?id=com.live.drive'
-        }
-
-    });
+//     var qs = AppRedirect.queryString;
+//     // Here we initiate the redirect process
+//     AppRedirect.redirect({
+// //        iosApp: 'twitter://post?message=' + qs['message'],
+// //        iosAppStore: 'https://itunes.apple.com/il/app/twitter/id333903271?mt=8&message=' + qs['message'],
+//         // For this, your app need to have category filter: android.intent.category.BROWSABLE
+//         // android: {
+//         //     'host': 'explore/tags/balangan/' + encodeURIComponent(qs['message']), // Host/path/querystring part in a custom scheme URL
+//         //     'action': 'com.inagi.drivelive.screen.login.LoginActivity', // Equivalent to ACTION in INTENTs
+//         //     // 'category': 'android.intent.category.DEFAULT', // Equivalent to CATEGORY in INTENTs
+//         //     // 'component': '', // Equivalent to COMPONENT in INTENTs
+//         //     'scheme': 'drivelive', // Scheme part in a custom scheme URL
+//         //     'package': 'com.live.drive', // Package name in Play store
+//         //     'fallback': 'https://play.google.com/store/apps/details?id=com.live.drive'
+//         // }
+//
+//     });
 
     </script>
 
