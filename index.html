@@ -26,9 +26,9 @@
     // Here we initiate the redirect process
     AppRedirect.redirect({
 
-        iosApp: 'twitter://post?message=' + qs['message'],
+//        iosApp: 'twitter://post?message=' + qs['message'],
 
-        iosAppStore: 'https://itunes.apple.com/il/app/twitter/id333903271?mt=8&message=' + qs['message'],
+//        iosAppStore: 'https://itunes.apple.com/il/app/twitter/id333903271?mt=8&message=' + qs['message'],
 
         // For this, your app need to have category filter: android.intent.category.BROWSABLE
         android: {
@@ -36,9 +36,9 @@
             // 'action': '', // Equivalent to ACTION in INTENTs
             // 'category': '', // Equivalent to CATEGORY in INTENTs
             // 'component': '', // Equivalent to COMPONENT in INTENTs
-            'scheme': 'twitter', // Scheme part in a custom scheme URL
-            'package': 'com.twitter.android', // Package name in Play store
-            'fallback': 'https://play.google.com/store/apps/details?id=com.twitter.android&hl=en&message=' + qs['message']
+            'scheme': 'drivelive', // Scheme part in a custom scheme URL
+            'package': 'com.drivelive.android', // Package name in Play store
+            'fallback': 'https://play.google.com/store/apps/details?id=com.drivelive.android&hl=en&message=' + qs['message']
         }
 
     });
