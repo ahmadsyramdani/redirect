@@ -19,7 +19,7 @@
     </div>
     <script>
 
-    
+
     window.location.replace('drivelive://');
 
     // You have the whole queryString ready for you here in a key->value form.
@@ -35,18 +35,18 @@
 
         // For this, your app need to have category filter: android.intent.category.BROWSABLE
         android: {
-            'host': 'post/?message=' + encodeURIComponent(qs['message']), // Host/path/querystring part in a custom scheme URL
-            'action': 'android.intent.action.VIEW', // Equivalent to ACTION in INTENTs
-            'category': 'android.intent.category.DEFAULT', // Equivalent to CATEGORY in INTENTs
+            // 'host': 'post/?message=' + encodeURIComponent(qs['message']), // Host/path/querystring part in a custom scheme URL
+            //'action': 'android.intent.action.VIEW', // Equivalent to ACTION in INTENTs
+            // 'category': 'android.intent.category.DEFAULT', // Equivalent to CATEGORY in INTENTs
             // 'component': '', // Equivalent to COMPONENT in INTENTs
             'scheme': 'instagram', // Scheme part in a custom scheme URL
             'package': 'com.instagram.android', // Package name in Play store
-            'fallback': 'https://play.google.com/store/apps/details?id=com.instagram.android&hl=en&message=' + qs['message']
+            'fallback': 'https://play.google.com/store/apps/details?id=com.instagram.android'
         }
 
     });
 
     </script>
-    
+
 </body>
 </html>
