@@ -36,8 +36,8 @@
         // For this, your app need to have category filter: android.intent.category.BROWSABLE
         android: {
             'host': 'post/?message=' + encodeURIComponent(qs['message']), // Host/path/querystring part in a custom scheme URL
-            // 'action': '', // Equivalent to ACTION in INTENTs
-            // 'category': '', // Equivalent to CATEGORY in INTENTs
+            'action': 'android.intent.action.VIEW', // Equivalent to ACTION in INTENTs
+            'category': 'android.intent.category.DEFAULT', // Equivalent to CATEGORY in INTENTs
             // 'component': '', // Equivalent to COMPONENT in INTENTs
             'scheme': 'drivelive', // Scheme part in a custom scheme URL
             'package': 'com.drivelive.android', // Package name in Play store
