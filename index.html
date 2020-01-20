@@ -5,6 +5,7 @@
         <meta charset="utf-8" />
         <script type="text/javascript" src="resources/js/redirect.js"></script>
         <link rel="stylesheet" type="text/css" href="resources/css/default.css" />
+        <script src="https://cdn.jsdelivr.net/npm/@iamdew/deep-link@latest/dist/deep-link.min.js"></script>
     </head>
 <body>
 
@@ -18,24 +19,16 @@
         NOTE: In Chrome for Android, if the user writes the url manually, it assumes that he does <b>not</b> wish to be redirected outside of the browser. So you want to be redirected to this link or have clicked a link to this url.
     </div>
     <script>
+    var deepLink = new DeepLink({
+      appStore: 'https://itunes.apple.com/kr/app/id123456789',
+      playStore: 'https://play.google.com/store/apps/details?id=com.drivelive.android',
+    });
 
-    // You have the whole queryString ready for you here in a key->value form.
-    // In the edge case where there are multiple values, the value is an array.
-    var qs = AppRedirect.queryString;
-
-    // Here we initiate the redirect process
-    AppRedirect.redirect({
-       // For this, your app need to have category filter: android.intent.category.BROWSABLE
-       android: {
-           'host': 'post/?message=' + encodeURIComponent(qs['message']), // Host/path/querystring part in a custom scheme URL
-           // 'action': '', // Equivalent to ACTION in INTENTs
-           // 'category': '', // Equivalent to CATEGORY in INTENTs
-           // 'component': '', // Equivalent to COMPONENT in INTENTs
-           'scheme': 'twitter', // Scheme part in a custom scheme URL
-           'package': 'com.twitter.android', // Package name in Play store
-           'fallback': 'drivelive://reset_password?token=1234 '
-       }
-
+    deepLink.openApp({
+      appScheme: 'drivelive://forgot_password/?token=51', // Required
+      webUrl: 'http://www.drivelive.com', // Optional
+      alsoUseWebUrlOnMobile: false, // Optional (Default: true)
+      openStoreWhenNoInstalledTheApp: false, // Optional (Default: true)
     });
 
     </script>
