@@ -14,16 +14,15 @@
     <script>
     deeplink.setup({
       android: {
-          appId: "com.twitter.android"
+          appId: "com.twitter.android",
           //appId: "com.inagi.drivelive"
+          storeUrl: "https://play.google.com/store/apps/details?id=com.twitter.android"
 
-      },
-      fallback: false,
-      androidDisabled: true
+      }
     });
 
     window.onload = function() {
-      deeplink.open("twitter://profule");
+      deeplink.open("twitter://profile");
     }
 
     </script>
