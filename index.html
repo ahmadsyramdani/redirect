@@ -11,32 +11,24 @@
         redirecting ..,
     </div>
 
+    <iframe style="display:none" height=0 width=0 src="twitter://profile/"></iframe>
     <script>
-    // You have the whole queryString ready for you here in a key->value form.
-    // In the edge case where there are multiple values, the value is an array.
-    var qs = AppRedirect.queryString;
+          var start = Date.now();
+          function try_close(){
+              location.replace('about:blank');
+          }
 
-    // Here we initiate the redirect process
-    AppRedirect.redirect({
+          function store_or_close(){
+              var now = Date.now();
+              if (now - start > 3000) {
+                  try_close();
+              } else {
+                  window.location.replace('https://play.google.com/store/apps/details?id=com.twitter.android&hl=en&profile');
+                  setInterval(try_close, 1000);
+              }
+          }
 
-        // iosApp: 'twitter://post?message=' + qs['message'],
-        //
-        // iosAppStore: 'https://itunes.apple.com/il/app/twitter/id333903271?mt=8&message=' + qs['message'],
-
-        // For this, your app need to have category filter: android.intent.category.BROWSABLE
-        android: {
-            'host': 'profile', // Host/path/querystring part in a custom scheme URL
-            'action': '', // Equivalent to ACTION in INTENTs
-            'category': '', // Equivalent to CATEGORY in INTENTs
-            'component': '', // Equivalent to COMPONENT in INTENTs
-            'scheme': 'twitter', // Scheme part in a custom scheme URL
-            'package': 'com.twitter.android', // Package name in Play store
-            //'fallback': 'https://play.google.com/store/apps/details?id=com.twitter.android&hl=en&profile'
-        }
-
-    });
-
-
+          setInterval(store_or_close, 2000);
     </script>
 
 </body>
