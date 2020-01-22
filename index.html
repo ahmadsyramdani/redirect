@@ -11,15 +11,9 @@
       <a class="redirect" href="drivelive://reset_password/">Redirect..</a>
     </div>
 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
     <script>
-    $(document).on("click", ".redirect", function() {
-      console.log('clicked');
-    });
-
-    $(document).ready(function() {
-      var url = "drivelive://reset_password/";
-      $(location).attr('href',url);
-    });
 
     $(document).ready(function() {
       document.location.href = "drivelive://reset_password/";
