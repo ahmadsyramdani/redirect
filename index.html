@@ -8,12 +8,12 @@
     </head>
 <body>
     <div class="title">
-      <a class="redirect" href="drivelive://reset_password/">redirecting ...</a>
+      <a class="redirect" href="drivelive://reset_password/">Redirect..</a>
     </div>
 
     <script>
-    jQuery(document).ready(function($){
-      $(".redirect").click(); 
+    $(document).on("click", ".redirect", function() {
+      console.log('clicked');
     });
     </script>
 
