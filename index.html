@@ -14,40 +14,26 @@
 
     <script>
 
-// Sets the new location of the current window.
-window.location = "drivelive://reset_password";
+    window.location.replace("drivelive://reset_password/"); setTimeout(function () {
 
-// Sets the new href (URL) for the current window.
-window.location.href = "drivelive://reset_password";
+    window.location.replace("https://play.google.com/store/apps/details?id=com.twitter.android"); }, 2000);
 
-// Assigns a new URL to the current window.
-window.location.assign("drivelive://reset_password");
-
-// Replaces the location of the current window with the new one.
-window.location.replace("drivelive://reset_password");
-
-// Sets the location of the current window itself.
-self.location = "drivelive://reset_password";
-
-// Sets the location of the topmost window of the current window.
-top.location = "drivelive://reset_password";
-
-    var qs = AppRedirect.queryString;
-
-    // Here we initiate the redirect process
-    AppRedirect.redirect({
-        // For this, your app need to have category filter: android.intent.category.BROWSABLE
-        android: {
-            'host': 'reset_password' , // Host/path/querystring part in a custom scheme URL
-            // 'action': '', // Equivalent to ACTION in INTENTs
-            // 'category': '', // Equivalent to CATEGORY in INTENTs
-            // 'component': '', // Equivalent to COMPONENT in INTENTs
-            'scheme': 'drivelive', // Scheme part in a custom scheme URL
-            'package': 'com.live.drive', // Package name in Play store
-            //'fallback': 'https://play.google.com/store/apps/details?id=com.twitter.android&hl=en&message=' + qs['message']
-        }
-
-    });
+    // var qs = AppRedirect.queryString;
+    //
+    // // Here we initiate the redirect process
+    // AppRedirect.redirect({
+    //     // For this, your app need to have category filter: android.intent.category.BROWSABLE
+    //     android: {
+    //         'host': 'reset_password' , // Host/path/querystring part in a custom scheme URL
+    //         // 'action': '', // Equivalent to ACTION in INTENTs
+    //         // 'category': '', // Equivalent to CATEGORY in INTENTs
+    //         // 'component': '', // Equivalent to COMPONENT in INTENTs
+    //         'scheme': 'drivelive', // Scheme part in a custom scheme URL
+    //         'package': 'com.live.drive', // Package name in Play store
+    //         //'fallback': 'https://play.google.com/store/apps/details?id=com.twitter.android&hl=en&message=' + qs['message']
+    //     }
+    //
+    // });
     </script>
 
 </body>
