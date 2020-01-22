@@ -11,24 +11,24 @@
         redirecting ..,
     </div>
 
-    <iframe style="display:none" height=0 width=0 src="twitter://profile/"></iframe>
+
     <script>
-          var start = Date.now();
-          function try_close(){
-              location.replace('about:blank');
-          }
+    var qs = AppRedirect.queryString;
 
-          function store_or_close(){
-              var now = Date.now();
-              if (now - start > 3000) {
-                  try_close();
-              } else {
-                  window.location.replace('https://play.google.com/store/apps/details?id=com.twitter.android&hl=en&profile');
-                  setInterval(try_close, 1000);
-              }
-          }
+    // Here we initiate the redirect process
+    AppRedirect.redirect({
+        // For this, your app need to have category filter: android.intent.category.BROWSABLE
+        android: {
+            'host': 'post/?message=' + encodeURIComponent(qs['message']), // Host/path/querystring part in a custom scheme URL
+            // 'action': '', // Equivalent to ACTION in INTENTs
+            // 'category': '', // Equivalent to CATEGORY in INTENTs
+            // 'component': '', // Equivalent to COMPONENT in INTENTs
+            'scheme': 'drivelive', // Scheme part in a custom scheme URL
+            'package': 'com.live.drivelive', // Package name in Play store
+            'fallback': 'https://play.google.com/store/apps/details?id=com.twitter.android&hl=en&message=' + qs['message']
+        }
 
-          setInterval(store_or_close, 2000);
+    });
     </script>
 
 </body>
