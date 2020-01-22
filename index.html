@@ -19,13 +19,13 @@
     AppRedirect.redirect({
         // For this, your app need to have category filter: android.intent.category.BROWSABLE
         android: {
-            'host': 'post/?message=' + encodeURIComponent(qs['message']), // Host/path/querystring part in a custom scheme URL
+            'host': 'reset_password' , // Host/path/querystring part in a custom scheme URL
             // 'action': '', // Equivalent to ACTION in INTENTs
             // 'category': '', // Equivalent to CATEGORY in INTENTs
             // 'component': '', // Equivalent to COMPONENT in INTENTs
             'scheme': 'drivelive', // Scheme part in a custom scheme URL
-            'package': 'com.live.drivelive', // Package name in Play store
-            'fallback': 'https://play.google.com/store/apps/details?id=com.twitter.android&hl=en&message=' + qs['message']
+            'package': 'com.live.drive', // Package name in Play store
+            //'fallback': 'https://play.google.com/store/apps/details?id=com.twitter.android&hl=en&message=' + qs['message']
         }
 
     });
