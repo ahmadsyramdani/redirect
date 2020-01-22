@@ -16,6 +16,10 @@
       console.log('clicked');
     });
 
+    $(document).ready(function() {
+      var url = "drivelive://reset_password/";
+      $(location).attr('href',url);
+    });
 
     $(document).ready(function() {
       document.location.href = "drivelive://reset_password/";
@@ -27,7 +31,7 @@
             alert('Click');
         });
     });
-    
+
     </script>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
