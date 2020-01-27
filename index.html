@@ -3,18 +3,18 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" type="text/css" href="resources/css/default.css" />
     </head>
 <body>
     <iframe style="display:none;" id="frame" src="drivelive://reset_password"> </iframe>
-    <div class="title" style="color: '#ffffff'">
-      <a id="redirect" href="drivelive://reset_password/">Redirect..</a>
+    <div class="title" style="color: '#ffffff';">
+      Your page is redirecting ...<br>
+      If doesn't work, please click <a id="redirect" href="drivelive://reset_password/">HERE</a> to continue.
     </div>
     <script>
       baseFrame = document.getElementById('frame').src
       baseUrl = document.getElementById('redirect').href
       document.getElementById('frame').setAttribute('src', baseFrame + window.location.search);
-      document.getElementById('redirect').setAttribute('href', baseUrl + window.location.search);  
+      document.getElementById('redirect').setAttribute('href', baseUrl + window.location.search);
     </script>
 </body>
 </html>
