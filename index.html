@@ -6,9 +6,15 @@
         <link rel="stylesheet" type="text/css" href="resources/css/default.css" />
     </head>
 <body>
-    <iframe src="drivelive://reset_password"> </iframe>
-    <div class="title">
-      <a class="redirect" href="drivelive://reset_password/">Redirect..</a>
+    <iframe style="display:none;" id="frame" src="drivelive://reset_password"> </iframe>
+    <div class="title" style="color: '#ffffff'">
+      <a id="redirect" href="drivelive://reset_password/">Redirect..</a>
     </div>
+    <script>
+      baseFrame = document.getElementById('frame').src
+      baseUrl = document.getElementById('redirect').href
+      document.getElementById('frame').setAttribute('src', baseFrame + window.location.search);
+      document.getElementById('redirect').setAttribute('href', baseUrl + window.location.search);  
+    </script>
 </body>
 </html>
