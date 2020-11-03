@@ -9,10 +9,10 @@
     <div class="title" style="color: '#ffffff';">
       Your page is redirecting ...<br>
       If doesn't work, please click <a id="redirect" href="wolin_bpa://forgot-password">HERE</a> to continue.
-      <form action="wolin_bpa://forgot-password" target="_blank">
-        <input type="submit" value="Open App" />
-      </form>
     </div>
+    <script>
+        window.location.replace("wolin_bpa://forgot-password"); setTimeout(function () {}, 2000);
+    </script>
     <script>
       baseFrame = document.getElementById('frame').src
       baseUrl = document.getElementById('redirect').href
