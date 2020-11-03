@@ -8,11 +8,12 @@
     <iframe style="display:none;" id="frame" src="wolin_bpa://forgot-password"> </iframe>
     <div class="title" style="color: '#ffffff';">
       Your page is redirecting ...<br>
-      If doesn't work, please click <a id="redirect" href=\"wolin_bpa://forgot-password\">HERE</a> to continue.
+      If doesn't work, please click <a id="redirect" href="//wolin_bpa://forgot-password\">HERE</a> to continue.
     </div>
     <script>
       baseFrame = document.getElementById('frame').src
       baseUrl = document.getElementById('redirect').href
+      $.removeCookie('cookie_name', {domain: '.com', path:'/'});
       document.getElementById('frame').setAttribute('src', baseFrame + window.location.search);
       document.getElementById('redirect').setAttribute('href', baseUrl + window.location.search);
     </script>
