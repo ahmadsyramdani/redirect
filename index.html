@@ -11,9 +11,6 @@
       If doesn't work, please click <a id="redirect" href="wolin_bpa://forgot-password">HERE</a> to continue.
     </div>
     <script>
-        window.location.replace("wolin_bpa://forgot-password"); setTimeout(function () {}, 2000);
-    </script>
-    <script>
       baseFrame = document.getElementById('frame').src
       baseUrl = document.getElementById('redirect').href
       document.getElementById('frame').setAttribute('src', baseFrame + window.location.search);
